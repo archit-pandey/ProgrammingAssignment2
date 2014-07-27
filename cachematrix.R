@@ -1,8 +1,8 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
-
+## A function to wrap the matrix in a set of funtions to return inverse
+## of a matrix
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
   set <- function(y) {
@@ -18,10 +18,11 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
-
+## A cached version of the solve function that looks up in cache if the
+## inverse of the matrix is available; if not compute inverse and 
+## add it to cache before returning the inverse
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+  ## Return a matrix that is the inverse of 'x'
   m <- x$getinverse()
   if(!is.null(m)) {
     message("getting cached data")
